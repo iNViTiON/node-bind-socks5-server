@@ -1,62 +1,28 @@
-# node-socks5-server
+forked from <https://github.com/lqqyt2423/node-socks5-server>
 
-Provides the `socks5` package that implements a [SOCKS5 server](http://en.wikipedia.org/wiki/SOCKS).
-SOCKS (Secure Sockets) is used to route traffic between a client and server through
-an intermediate proxy layer. This can be used to bypass firewalls or NATs.
+# bind-socks5-server
 
-## Features
+This is a SOCKS5 proxy server intended to bind to a specific local network adapter to direct network traffic, useful when used with a VPN.
 
-- "No Auth" mode
-- User/Password authentication
-- Support for the CONNECT command
-- Support UDP
-- set localAddress interface
-- use specific DNS server
+## Usage instructions
 
-## Usage for command
+### Install globally
 
-### Install global
-
-```
-npm i -g node-socks5-server
+```sh
+npm i -g bind-socks5-server
 ```
 
 ### Startup
 
-```
-node-socks5
-```
-
-## Usage for package
-
-### Install in your project
-
-```
-npm i node-socks5-server
+```sh
+bind-socks5
 ```
 
-### Require
+Then using arrow key to choose network adapter you want to route traffic through. Proxy server will listen to port 1080.
 
-Below is a simple example of usage. Go examples folder see more.
+### Configure your browser
 
-```javascript
-const socks5 = require('node-socks5-server');
-
-const server = socks5.createServer();
-server.listen(1080);
-```
-
-## Test with curl
-
-```bash
-curl http://www.baidu.com/ --socks5 localhost:1080
-curl http://www.baidu.com/ --socks5-hostname localhost:1080
-curl http://www.baidu.com/ --socks5 user:password@localhost:1080
-```
-
-## TODO
-
-- bind
+To route specific websites or all traffic through the proxy, it is recommended to use [Proxy SwitchyOmega](https://chromewebstore.google.com/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif). This tool allows for easy switching between different proxy profiles.
 
 ## Thanks
 
@@ -64,3 +30,4 @@ curl http://www.baidu.com/ --socks5 user:password@localhost:1080
 - [rfc1928](https://tools.ietf.org/html/rfc1928)
 - [rfc1929](https://tools.ietf.org/html/rfc1929)
 - [go-socks](https://github.com/armon/go-socks5)
+- [node-socks5-server](https://github.com/lqqyt2423/node-socks5-server)
