@@ -29,8 +29,12 @@ jobs:
           echo "NPM: $( npm -v )"
           echo "Yarn: $( yarn -v )"
 
-      - run: yarn install --immutable
-      - run: yarn pack
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Build package
+        run: yarn pack
 
-      - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-      - run: npm publish package.tgz --provenance --access public
+      - name: Configure NPM
+        run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      - name: Publish package
+        run: npm publish package.tgz --provenance --access public
