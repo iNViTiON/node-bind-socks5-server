@@ -191,9 +191,9 @@ class SocketHandler {
           } else if (this.dns && typeof this.dns === 'object') {
             dnsResolver.setServers(this.dns);
           }
-          if (this.localAddress) {
-            dnsResolver.setLocalAddress(this.localAddress);
-          }
+          // if (this.localAddress) {
+          //   dnsResolver.setLocalAddress(this.localAddress);
+          // }
           const ips = await dnsResolver.resolve4(domain);
           dstHost = ips[0];
         } catch (err) {
