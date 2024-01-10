@@ -9,7 +9,7 @@ This is a SOCKS5 proxy server intended to bind to a specific local network adapt
 ### Install globally
 
 ```sh
-npm i -g bind-socks5-server
+npm i -g @invition/bind-socks5-server
 ```
 
 ### Startup
