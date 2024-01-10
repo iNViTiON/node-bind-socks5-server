@@ -1,11 +1,11 @@
 'use strict';
 
-const net = require('net');
-const { Resolver } = require('node:dns').promises;
-const ipv4 = require('./utils/ipv4');
-const ipv6 = require('./utils/ipv6');
-const buf = require('./utils/buf');
-const udp = require('dgram');
+import net from 'net';
+import { Resolver } from 'dns/promises';
+import * as ipv4 from './utils/ipv4.js';
+import * as ipv6 from './utils/ipv6.js';
+import * as buf from './utils/buf.js';
+import udp from 'dgram';
 
 class SocketHandler {
   constructor(socket, options = {}) {
@@ -278,7 +278,7 @@ class SocketHandler {
   }
 }
 
-function createServer(options = {}) {
+export function createServer(options = {}) {
   const logger = options.logger || console;
   const udpServer = udp.createSocket('udp4');
   const server = net.createServer((socket) => {
@@ -388,5 +388,3 @@ function createServer(options = {}) {
   });
   return server;
 }
-
-exports.createServer = createServer;

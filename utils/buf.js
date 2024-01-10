@@ -1,4 +1,4 @@
-function numberToBuffer(num, len = 2, byteOrder = 0) {
+export const numberToBuffer = (num, len = 2, byteOrder = 0) => {
   if (len < 1) {
     throw Error('len must be greater than 0');
   }
@@ -13,4 +13,3 @@ function numberToBuffer(num, len = 2, byteOrder = 0) {
 
   return buf;
 }
-exports.numberToBuffer = numberToBuffer;
