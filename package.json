@@ -1,5 +1,5 @@
 {
-  "name": "bind-socks5-server",
+  "name": "@invition/bind-socks5-server",
   "version": "0.1.0",
   "description": "SOCKS5 server binded to specific network adapter implements with nodejs",
   "main": "index.js",
