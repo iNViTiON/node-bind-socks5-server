@@ -31,6 +31,6 @@ jobs:
 
       - run: yarn install --immutable
       - run: yarn pack
+
+      - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
       - run: npm publish package.tgz --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
